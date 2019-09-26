@@ -12,7 +12,7 @@ In addtion to this purpose, this app aim the use of the sound middle ware"ADX2LE
 
 
 ## Usage
-![usage_ver1.0](https://github.com/yarikomiVR/Midi2csv/blob/images/images_midi2csv/usage_midi2csv_ver1.0.png)
+![usage_ver1.0](https://github.com/yarikomiVR/Midi2csv/issues/1#issue-498664384)
 1- Select midi file.
 2- Input the track number you want to see or export (this number is essential to export csv file).
 3- Push preview button.
