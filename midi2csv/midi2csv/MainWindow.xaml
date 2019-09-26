@@ -1,0 +1,64 @@
+﻿<Window x:Class="Midi2csv.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Midi2csv"
+        mc:Ignorable="d"
+        Title="midi2csv" Height="450" Width="800" ResizeMode="NoResize" Topmost="True" Icon="resource/appicon_midi2csv.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="371*"/>
+            <ColumnDefinition Width="209*"/>
+            <ColumnDefinition Width="214*"/>
+        </Grid.ColumnDefinitions>
+        <Button  Content="export into csv file" Margin="4,369,10,20" Click="Button_Click_ExportCSV" Grid.Column="2"/>
+        <TextBox Height="125" TextWrapping="Wrap" Text="Basic function: ver1.0.0&#xD;&#xA;1. Read midi file and analyze the total tracks, midi format and delta time unit.&#xD;&#xA;2. Preview the contents before export csv file.&#xD;&#xA;3. Convert volume 0 Note On to Note Off(if you convert once, you cannot undo it. Then you have to read file again.)  &#xD;&#xA;4. Can export with the real time from the track start.&#xD;&#xA;5. &quot;experimental&quot; CriAtomCraft format. This format is for using sound middle ware &quot;ADX2LE&quot;.&#xA;" VerticalAlignment="Top" Margin="10,10,9,0" Grid.ColumnSpan="2"/>
+        <Button Content="Select midi file" Margin="0,103,10,0" VerticalAlignment="Top" Height="32" Click="Button_Click_OpenMidiFile" Grid.Column="2" HorizontalAlignment="Right" Width="200"/>
+        <Grid x:Name="Preview" Margin="261,135,10,20" Grid.ColumnSpan="2">
+            <ListView ItemsSource="{Binding}" x:Name="listView" Margin="0,26,-1,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding noteID}" Width="50"/>
+                        <GridViewColumn Header="Deltatime" DisplayMemberBinding="{Binding deltaTime}" Width="50"/>
+                        <GridViewColumn Header="Event Type" DisplayMemberBinding="{Binding eventType}" Width="100"/>
+                        <GridViewColumn Header="Event Contents" DisplayMemberBinding="{Binding eventParam}" Width="50"/>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label Content="Preview" HorizontalAlignment="Left" VerticalAlignment="Top" Width="309" FontWeight="Bold"/>
+        </Grid>
+        <Grid x:Name="MidiFileInfomation" HorizontalAlignment="Left" Margin="10,135,0,20" Width="246">
+            <Label Content="midi file information" HorizontalAlignment="Left" VerticalAlignment="Top" Width="222" FontWeight="Bold"/>
+            <ListBox x:Name="MidiFileBasicInfo_LIST" Margin="0,26,0,0">
+                <Grid x:Name="MidiTrack" Width="222" Height="46">
+                    <TextBlock TextWrapping="Wrap" Text="Total tracks" Margin="0,0,10,22" VerticalAlignment="Center"/>
+                    <TextBox x:Name="midiTrack" TextWrapping="Wrap" Margin="0,24,10,0" />
+                </Grid>
+                <Grid x:Name="MidiFormat" Width="222" Height="46">
+                    <TextBlock TextWrapping="Wrap" Text="midi format" Margin="0,4,0,26" HorizontalAlignment="Left" VerticalAlignment="Center" Width="212"/>
+                    <TextBox x:Name="midiFormat" TextWrapping="Wrap" Margin="0,24,10,0" />
+                </Grid>
+                <Grid x:Name="Deltatime" Width="222" Height="46">
+                    <TextBlock TextWrapping="Wrap" Text="Deltatime Unit" Margin="0,4,0,26" HorizontalAlignment="Left" VerticalAlignment="Center" Height="16" Width="212"/>
+                    <TextBox x:Name="midiTimeUnit" TextWrapping="Wrap" Margin="0,24,10,0" AllowDrop="False" />
+                </Grid>
+            </ListBox>
+        </Grid>
+        <Grid x:Name="TotalNoteNum" VerticalAlignment="Top" Margin="4,193,10,0" Grid.Column="2">
+            <TextBlock TextWrapping="Wrap" Margin="0,0,0,23" VerticalAlignment="Center" Height="20" HorizontalAlignment="Left" Width="160"><Run Text="Total notes"/></TextBlock>
+            <TextBox x:Name="totalNoteNum" TextWrapping="Wrap" Margin="0,20,10,0" RenderTransformOrigin="0.29,0.478" />
+        </Grid>
+        <Grid x:Name="PreviewTrackNum" Height="48" VerticalAlignment="Top" Grid.Column="2" Margin="4,140,10,0">
+            <TextBlock TextWrapping="Wrap" Text="Preview Track No." Margin="0,0,0,26" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" Width="190"/>
+            <TextBox x:Name="previewTrackNum" InputMethod.IsInputMethodEnabled="False"
+                        PreviewTextInput="textBoxPrice_PreviewTextInput"
+                        CommandManager.PreviewExecuted="textBoxPrice_PreviewExecuted" TextWrapping="Wrap" Margin="0,22,102,5" />
+            <Button Content="Preview" Margin="103,22,0,5" Click="ButtonClick_TrackPreview"/>
+        </Grid>
+        <CheckBox x:Name="isCriAtomFormat" Content="CriAtomCraft format" Grid.Column="2" HorizontalAlignment="Left" Margin="4,349,0,0" VerticalAlignment="Top" Width="200"/>
+        <CheckBox x:Name="convertDeltatime2Time" Content="With the real time from track start" Grid.Column="2" HorizontalAlignment="Left" Margin="4,329,0,0" VerticalAlignment="Top" Width="200"/>
+        <CheckBox x:Name="convertVolume00NoteOn" Content="Convert Vol.0 NoteON to NoteOff" Grid.Column="2" HorizontalAlignment="Left" Margin="4,241,0,0" VerticalAlignment="Top" Width="200"/>
+    </Grid>
+</Window>

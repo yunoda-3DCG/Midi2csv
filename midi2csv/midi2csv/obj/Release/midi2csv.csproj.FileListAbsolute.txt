@@ -1,0 +1,14 @@
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\bin\Release\midi2csv.exe.config
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\bin\Release\midi2csv.exe
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\bin\Release\midi2csv.pdb
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\MainWindow.g.cs
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\App.g.cs
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv_MarkupCompile.cache
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv_MarkupCompile.lref
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\MainWindow.baml
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv.g.resources
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv.Properties.Resources.resources
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv.csproj.GenerateResource.cache
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv.csproj.CoreCompileInputs.cache
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv.exe
+C:\Users\Yu Noda\source\repos\midi2csv\midi2csv\obj\Release\midi2csv.pdb
