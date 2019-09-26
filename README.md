@@ -1,6 +1,7 @@
 midi2csv
 ====
 
+
 ##Overview
 With midi2csv you can write down the midi file into csv file. This tool converts the binary data into text data which you can read easily(ex.60 9c 50 => Deltatime, 60 : EventType, Channel 13 Note On: Velocity, 50...)
 
@@ -12,7 +13,7 @@ In addtion to this purpose, this app aim the use of the sound middle ware"ADX2LE
 
 
 ## Usage
-![usage_ver1.0](https://github.com/yarikomiVR/Midi2csv/issues/1#issue-498664384)
+![usage_midi2csv_ver1 0](https://user-images.githubusercontent.com/50200315/65660122-a1f63a80-e068-11e9-8bf0-34d05fded68e.png)
 1- Select midi file.
 2- Input the track number you want to see or export (this number is essential to export csv file).
 3- Push preview button.
